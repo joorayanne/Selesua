@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:selesua/utils.dart/biographies.dart';
 
 class Stories extends StatelessWidget {
@@ -31,38 +32,38 @@ class Stories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.45,
+      height: 500,
       child: ListView.builder(
         scrollDirection: Axis.vertical,
         itemCount: 5,
         itemBuilder: (context, index) {
-          return SizedBox(
-            width: MediaQuery.of(context).size.width * 0.9,
-            height: MediaQuery.of(context).size.height * 0.18,
+          return Container(
+            width: 400,
+            height: 200,
             child: Column(
               children: [
                 Container(
                   margin: EdgeInsets.only(right: 10),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: const Color.fromARGB(255, 246, 203, 218),
+                    borderRadius: BorderRadius.circular(8),
+                    color: Colors.red.shade100,
                   ),
-                  width: MediaQuery.of(context).size.width * 0.90,
-                  height: MediaQuery.of(context).size.height * 0.1,
+                  width: 380,
+                  height: 130,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       //image container
                       ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(10),
                         child: Container(
-                          height: MediaQuery.of(context).size.height * 0.1,
-                          width: MediaQuery.of(context).size.width * 0.45,
+                          height: 140,
+                          width: 190,
                           decoration: const BoxDecoration(
                               color: Colors.teal,
                               borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(20),
-                                  bottomRight: Radius.circular(20))),
+                                  topRight: Radius.circular(10),
+                                  bottomRight: Radius.circular(10))),
                           child: Image.network(
                             biographies[index].imgpath,
                             fit: BoxFit.cover,
@@ -70,16 +71,18 @@ class Stories extends StatelessWidget {
                         ),
                       ),
 
-                      Container(
-                        alignment: Alignment.center,
-                        margin: EdgeInsets.all(12),
-                        width: MediaQuery.of(context).size.width * 0.3,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12)),
-                        child: Text(
-                          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                          softWrap: true,
-                          overflow: TextOverflow.clip,
+                      Expanded(
+                        child: Container(
+                          alignment: Alignment.center,
+                          margin: EdgeInsets.all(12),
+                          width: 190,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8)),
+                          child: Text(
+                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                            softWrap: true,
+                            overflow: TextOverflow.clip,
+                          ),
                         ),
                       ),
                     ],
@@ -89,10 +92,10 @@ class Stories extends StatelessWidget {
                   height: 5,
                 ),
                 Container(
-                  width: MediaQuery.of(context).size.width * 0.90,
-                  height: MediaQuery.of(context).size.height * 0.05,
+                  width: 380,
+                  height: 40,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(10),
                     color: Colors.pink.shade50,
                   ),
                   child: Row(
@@ -102,10 +105,10 @@ class Stories extends StatelessWidget {
                         children: [
                           ClipRRect(
                             borderRadius:
-                                const BorderRadius.all(Radius.circular(30)),
+                                const BorderRadius.all(Radius.circular(20)),
                             child: Container(
-                              height: MediaQuery.of(context).size.height * 0.04,
-                              width: MediaQuery.of(context).size.width * 0.1,
+                              height: 40,
+                              width: 40,
                               decoration: const BoxDecoration(
                                   color: Colors.amber,
                                   borderRadius:

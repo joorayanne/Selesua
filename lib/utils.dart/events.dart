@@ -9,28 +9,40 @@ class Events extends StatelessWidget {
     Eventmodel(
       imgpath:
           'https://media.istockphoto.com/id/1386479313/photo/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?s=612x612&w=0&k=20&c=8ssXDNTp1XAPan8Bg6mJRwG7EXHshFO5o0v9SIj96nY=',
-    )
+    ),
+    Eventmodel(
+      imgpath:
+          'https://media.istockphoto.com/id/1386479313/photo/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?s=612x612&w=0&k=20&c=8ssXDNTp1XAPan8Bg6mJRwG7EXHshFO5o0v9SIj96nY=',
+    ),
+    Eventmodel(
+      imgpath:
+          'https://media.istockphoto.com/id/1386479313/photo/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?s=612x612&w=0&k=20&c=8ssXDNTp1XAPan8Bg6mJRwG7EXHshFO5o0v9SIj96nY=',
+    ),
+    Eventmodel(
+      imgpath:
+          'https://media.istockphoto.com/id/1386479313/photo/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?s=612x612&w=0&k=20&c=8ssXDNTp1XAPan8Bg6mJRwG7EXHshFO5o0v9SIj96nY=',
+    ),
   ];
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: MediaQuery.of(context).size.height * 0.45,
-        width: MediaQuery.of(context).size.width * 0.90,
+        height: 500,
+        width: 400,
         child: ListView.builder(
           itemCount: 5,
           itemBuilder: ((context, index) {
             return SizedBox(
-              height: MediaQuery.of(context).size.height * 0.17,
-              width: MediaQuery.of(context).size.width * 0.95,
+              height: 160,
+              width: 380,
               child: Column(
                 children: [
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(10),
                     child: Container(
-                      height: MediaQuery.of(context).size.height * 0.15,
-                      width: MediaQuery.of(context).size.width * 0.95,
+                      height: 140,
+                      width: 380,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(10),
                           color: Colors.pink.shade50),
                       child: Image.network(
                         events[index].imgpath,
