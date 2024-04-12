@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Biographies extends StatelessWidget {
-  final String imgpath;
-  final String name;
+  late String imgpath;
+  late String name;
   Biographies({
     super.key,
-    required this.imgpath,
-    required this.name,
   });
 
   final List<Biomodel> biographies = [
@@ -48,7 +46,7 @@ class Biographies extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
                           child: Image.network(
-                            imgpath,
+                            biographies[index].imgpath,
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -74,7 +72,7 @@ class Biographies extends StatelessWidget {
                           ),
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            name,
+                            biographies[index].name,
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 15.0,

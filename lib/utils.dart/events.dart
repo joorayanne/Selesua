@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 
 class Events extends StatelessWidget {
-  final String imgpath;
-  const Events({
+  late String imgpath;
+  Events({
     super.key,
-    required this.imgpath,
   });
-
+  final List<Eventmodel> events = [
+    Eventmodel(
+      imgpath:
+          'https://media.istockphoto.com/id/1386479313/photo/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?s=612x612&w=0&k=20&c=8ssXDNTp1XAPan8Bg6mJRwG7EXHshFO5o0v9SIj96nY=',
+    )
+  ];
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -29,7 +33,7 @@ class Events extends StatelessWidget {
                           borderRadius: BorderRadius.circular(15),
                           color: Colors.pink.shade50),
                       child: Image.network(
-                        'https://media.istockphoto.com/id/1386479313/photo/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?s=612x612&w=0&k=20&c=8ssXDNTp1XAPan8Bg6mJRwG7EXHshFO5o0v9SIj96nY=',
+                        events[index].imgpath,
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -43,4 +47,9 @@ class Events extends StatelessWidget {
           }),
         ));
   }
+}
+
+class Eventmodel {
+  late String imgpath;
+  Eventmodel({required this.imgpath});
 }

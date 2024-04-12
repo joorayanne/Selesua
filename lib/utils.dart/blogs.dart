@@ -2,11 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class Blogs extends StatelessWidget {
-  final String imgpath;
-  final String blogsneakpeek;
+  late String imgpath;
+  late String blogsneakpeek;
 
-  const Blogs({super.key, required this.imgpath, required this.blogsneakpeek});
-
+  Blogs({super.key});
+  final List<Blogmodel> blogs = [
+    Blogmodel(
+        imgpath:
+            'https://www.itu.int/en/ITU-D/Conferences/WTDC/WTDC21/R2A/PublishingImages/partner2connect/Sahle-Work-Zewde.png'),
+    Blogmodel(
+        imgpath:
+            'https://www.fanabc.com/english/wp-content/uploads/2023/09/Abeba-Berhane-450x300.png'),
+    Blogmodel(
+        imgpath:
+            'https://images.csmonitor.com/csm/2019/05/0520%20DDP%20ETHLADIES.jpg?alias=standard_900x600'),
+    Blogmodel(
+        imgpath:
+            'https://www.fanabc.com/english/wp-content/uploads/2023/04/photo_2023-04-27_16-48-37.jpg'),
+  ];
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -44,7 +57,7 @@ class Blogs extends StatelessWidget {
                                     bottomRight: Radius.circular(20)),
                                 color: Colors.pink.shade50),
                             child: Image.network(
-                              imgpath,
+                              blogs[index].imgpath,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -54,7 +67,8 @@ class Blogs extends StatelessWidget {
                         ),
                         //text container
                         Container(
-                          margin: EdgeInsets.all(8),
+                          alignment: Alignment.center,
+                          margin: EdgeInsets.all(12),
                           width: MediaQuery.of(context).size.width * 0.3,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(12)),
@@ -77,7 +91,9 @@ class Blogs extends StatelessWidget {
 
 class Blogmodel {
   final String imgpath;
-  final String blogsneakpeek;
+  late String blogsneakpeek;
 
-  Blogmodel({required this.imgpath, required this.blogsneakpeek});
+  Blogmodel({
+    required this.imgpath,
+  });
 }

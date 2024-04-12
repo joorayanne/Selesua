@@ -26,9 +26,10 @@ class _CarouselSliderAnimationState extends State<CarouselSliderAnimation> {
       children: [
         CarouselSlider(
           options: CarouselOptions(
+            height: 180,
             enlargeFactor: 10,
             disableCenter: true,
-            aspectRatio: 16 / 6,
+            aspectRatio: 16 / 8,
             autoPlay: true,
             enlargeCenterPage: true,
             onPageChanged: (index, reason) {
@@ -51,7 +52,7 @@ class _CarouselSliderAnimationState extends State<CarouselSliderAnimation> {
             );
           }).toList(),
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: 5),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: biographies.map((url) {

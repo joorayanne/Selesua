@@ -1,18 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:selesua/utils.dart/biographies.dart';
 
 class Stories extends StatelessWidget {
-  final String imgpath;
-  final String name;
-  final String sneekpeak;
-  final String profilepic;
-  const Stories({
+  late String imgpath;
+  late String name;
+  late String sneekpeak;
+  late String profilepic;
+  Stories({
     super.key,
-    required this.imgpath,
-    required this.name,
-    required this.sneekpeak,
-    required this.profilepic,
   });
 
+  final List<Biomodel> biographies = [
+    Biomodel(
+        imgpath:
+            'https://www.itu.int/en/ITU-D/Conferences/WTDC/WTDC21/R2A/PublishingImages/partner2connect/Sahle-Work-Zewde.png',
+        name: 'President SahleWork Zewdie'),
+    Biomodel(
+        imgpath:
+            'https://www.fanabc.com/english/wp-content/uploads/2023/09/Abeba-Berhane-450x300.png',
+        name: 'Scientist Abeba irhane'),
+    Biomodel(
+        imgpath:
+            'https://images.csmonitor.com/csm/2019/05/0520%20DDP%20ETHLADIES.jpg?alias=standard_900x600',
+        name: 'Meaza Ashenafi'),
+    Biomodel(
+        imgpath:
+            'https://www.fanabc.com/english/wp-content/uploads/2023/04/photo_2023-04-27_16-48-37.jpg',
+        name: 'Derartu Tulu'),
+  ];
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -49,14 +64,15 @@ class Stories extends StatelessWidget {
                                   topRight: Radius.circular(20),
                                   bottomRight: Radius.circular(20))),
                           child: Image.network(
-                            imgpath,
+                            biographies[index].imgpath,
                             fit: BoxFit.cover,
                           ),
                         ),
                       ),
 
                       Container(
-                        margin: EdgeInsets.all(8),
+                        alignment: Alignment.center,
+                        margin: EdgeInsets.all(12),
                         width: MediaQuery.of(context).size.width * 0.3,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12)),
@@ -95,7 +111,7 @@ class Stories extends StatelessWidget {
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(30))),
                               child: Image.network(
-                                profilepic,
+                                biographies[index].imgpath,
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -103,7 +119,9 @@ class Stories extends StatelessWidget {
                           const SizedBox(
                             width: 10,
                           ),
-                          Text(name),
+                          Text(
+                            biographies[index].name,
+                          ),
                         ],
                       ),
                       const Row(
